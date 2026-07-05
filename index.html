@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandan Dental Clinic — General &amp; Family Dentistry</title>
+<meta name="description" content="Chandan Dental Clinic offers modern, gentle dental care for the whole family. Book your appointment today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --porcelain:#FAF7F2;
+    --navy:#1B2A41;
+    --coral:#E8917A;
+    --ink:#0F1720;
+    --stone:#D4CFC4;
+    --navy-soft: rgba(27,42,65,0.06);
+    --max-w: 1140px;
+  }
+
+  *{margin:0; padding:0; box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--porcelain);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1, h2, h3, .display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color:var(--navy);
+  }
+
+  a{ color:inherit; }
+
+  img{max-width:100%; display:block;}
+
+  .wrap{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* Visible focus for accessibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:3px solid var(--coral);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(250,247,242,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--stone);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px;
+    max-width:var(--max-w);
+    margin:0 auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.25rem;
+    color:var(--navy); text-decoration:none;
+  }
+  .brand .mark{
+    width:30px; height:30px;
+  }
+  .nav-links{
+    display:flex; gap:32px; list-style:none; align-items:center;
+  }
+  .nav-links a{
+    text-decoration:none; font-size:0.95rem; font-weight:500; color:var(--navy);
+    position:relative; padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--coral);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+  .nav-cta{
+    background:var(--navy); color:var(--porcelain) !important;
+    padding:10px 20px; border-radius:30px; font-weight:600;
+  }
+  .nav-cta::after{ display:none; }
+  .nav-toggle{ display:none; }
+
+  @media (max-width:760px){
+    .nav-links{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:88px 0 0;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.1fr 0.9fr; gap:40px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--coral); font-weight:700; margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:''; width:18px; height:2px; background:var(--coral); display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 4.6vw, 3.8rem);
+    line-height:1.05;
+    margin-bottom:22px;
+  }
+  .hero p.lede{
+    font-size:1.15rem; color:#3a4a5e; max-width:480px; margin-bottom:32px;
+  }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:36px; }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:14px 26px; border-radius:30px; font-weight:600; font-size:0.98rem;
+    text-decoration:none; border:1.5px solid transparent; cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .btn-primary{ background:var(--coral); color:var(--ink); }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(232,145,122,0.4); }
+  .btn-ghost{ border-color:var(--navy); color:var(--navy); background:transparent; }
+  .btn-ghost:hover{ background:var(--navy-soft); }
+
+  .hero-trust{
+    display:flex; gap:28px; flex-wrap:wrap;
+  }
+  .trust-item{ display:flex; flex-direction:column; }
+  .trust-item .num{ font-family:'Fraunces', serif; font-size:1.5rem; font-weight:600; color:var(--navy); }
+  .trust-item .label{ font-size:0.82rem; color:#5b6b80; }
+
+  /* hero visual: arch motif */
+  .hero-visual{
+    position:relative;
+    aspect-ratio:1/1.05;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .arch-bg{
+    position:absolute; inset:0; width:100%; height:100%;
+  }
+  .hero-photo-frame{
+    position:relative; z-index:2;
+    width:78%; aspect-ratio:4/5;
+    border-radius:999px 999px 24px 24px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(27,42,65,0.35);
+    border:6px solid var(--porcelain);
+  }
+  .hero-photo-frame img{ width:100%; height:100%; object-fit:cover; }
+
+  .smile-divider{
+    width:100%;
+    display:block;
+    margin-top:60px;
+  }
+
+  /* ---------- Section shared ---------- */
+  section{ padding:90px 0; }
+  .section-head{ max-width:620px; margin-bottom:48px; }
+  .section-head .eyebrow{ margin-bottom:14px; }
+  .section-head h2{ font-size:clamp(1.9rem, 3vw, 2.6rem); margin-bottom:14px; }
+  .section-head p{ color:#3a4a5e; font-size:1.05rem; }
+
+  .bg-navy{ background:var(--navy); color:var(--porcelain); }
+  .bg-navy h2, .bg-navy h3{ color:var(--porcelain); }
+  .bg-navy .section-head p{ color:#c7d0dc; }
+
+  /* ---------- About / single specialty ---------- */
+  .about-grid{
+    display:grid; grid-template-columns: 0.85fr 1.15fr; gap:56px; align-items:center;
+  }
+  .about-img{
+    border-radius:20px; overflow:hidden;
+    box-shadow:0 24px 50px -16px rgba(27,42,65,0.25);
+  }
+  .feature-list{ list-style:none; margin-top:28px; display:flex; flex-direction:column; gap:18px; }
+  .feature-list li{ display:flex; gap:14px; align-items:flex-start; }
+  .feature-list .dot{
+    flex-shrink:0; width:10px; height:10px; border-radius:50%; background:var(--coral); margin-top:8px;
+  }
+  .feature-list strong{ color:var(--navy); display:block; margin-bottom:2px; }
+  .feature-list span.desc{ color:#3a4a5e; font-size:0.95rem; }
+
+  /* ---------- Services card ---------- */
+  .service-card{
+    background:#fff;
+    border:1px solid var(--stone);
+    border-radius:18px;
+    padding:34px 30px;
+    box-shadow:0 18px 40px -24px rgba(27,42,65,0.18);
+  }
+  .service-list{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:40px; }
+  .service-pill{
+    border:1px solid var(--stone); border-radius:16px; padding:26px 22px; background:#fff;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .service-pill:hover{ transform:translateY(-4px); box-shadow:0 16px 30px -18px rgba(27,42,65,0.3); }
+  .service-pill h3{ font-size:1.1rem; margin-bottom:8px; }
+  .service-pill p{ font-size:0.92rem; color:#3a4a5e; }
+  .service-pill .icon{ width:38px; height:38px; margin-bottom:16px; color:var(--coral); }
+
+  @media (max-width:880px){
+    .service-list{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width:560px){
+    .service-list{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- Hours / info strip ---------- */
+  .info-strip{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--stone);
+    border-radius:18px; overflow:hidden;
+  }
+  .info-cell{ background:var(--porcelain); padding:32px 28px; }
+  .info-cell h3{ font-size:1.05rem; margin-bottom:10px; display:flex; align-items:center; gap:10px;}
+  .info-cell .icon-sm{ width:20px; height:20px; color:var(--coral); }
+  .info-cell p, .info-cell ul{ color:#3a4a5e; font-size:0.95rem; }
+  .info-cell ul{ list-style:none; }
+  .info-cell li{ display:flex; justify-content:space-between; padding:4px 0; }
+  @media (max-width:760px){ .info-strip{ grid-template-columns:1fr; } }
+
+  /* ---------- Appointment form ---------- */
+  .appointment{
+    background:var(--navy);
+    border-radius:28px;
+    padding:60px;
+    color:var(--porcelain);
+    position:relative;
+    overflow:hidden;
+  }
+  .appointment::before{
+    content:'';
+    position:absolute; right:-80px; top:-80px; width:300px; height:300px;
+    border-radius:50%; background:radial-gradient(circle, rgba(232,145,122,0.25), transparent 70%);
+  }
+  .appt-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:50px; position:relative; z-index:1;}
+  .appt-grid h2{ color:var(--porcelain); }
+  .appt-grid .section-head p{ color:#c7d0dc; }
+
+  form{ display:grid; gap:18px; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  label{ font-size:0.85rem; font-weight:600; margin-bottom:6px; display:block; color:var(--porcelain); }
+  input, select, textarea{
+    width:100%;
+    background:rgba(255,255,255,0.08);
+    border:1.5px solid rgba(255,255,255,0.25);
+    border-radius:12px;
+    padding:13px 16px;
+    color:var(--porcelain);
+    font-family:'Inter', sans-serif;
+    font-size:0.95rem;
+  }
+  input::placeholder, textarea::placeholder{ color:rgba(255,255,255,0.45); }
+  select option{ color:#000; }
+  textarea{ resize:vertical; min-height:90px; }
+  .form-note{ font-size:0.82rem; color:#aebbca; margin-top:-4px; }
+  .btn-submit{
+    background:var(--coral); color:var(--ink); border:none; padding:15px 30px; border-radius:30px;
+    font-weight:700; font-size:1rem; cursor:pointer; justify-self:start;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-submit:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(232,145,122,0.45); }
+
+  @media (max-width:880px){
+    .appointment{ padding:36px 24px; border-radius:20px; }
+    .appt-grid{ grid-template-columns:1fr; }
+    .form-row{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- Footer ---------- */
+  footer{ padding:50px 0 30px; border-top:1px solid var(--stone); }
+  .footer-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; margin-bottom:36px;}
+  .footer-grid h4{ font-size:0.9rem; color:var(--navy); margin-bottom:14px; }
+  .footer-grid p, .footer-grid a{ color:#5b6b80; font-size:0.92rem; text-decoration:none; }
+  .footer-grid ul{ list-style:none; display:flex; flex-direction:column; gap:8px; }
+  .footer-bottom{ font-size:0.82rem; color:#8a95a3; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  @media (max-width:760px){ .footer-grid{ grid-template-columns:1fr; } }
+
+  @media (max-width:880px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-visual{ order:-1; max-width:340px; margin:0 auto; }
+    .about-grid{ grid-template-columns:1fr; }
+  }
+
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--coral); color:var(--ink); padding:10px 16px; z-index:100;
+  }
+  .skip-link:focus{ left:10px; top:10px; }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header>
+  <nav class="nav" aria-label="Primary">
+    <a href="#top" class="brand">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16 4C11 4 7 7.5 7 13c0 4 1.6 6.8 2.6 11.2.5 2.2 1 4.3 2.6 4.3 1.8 0 2-3.6 2.3-6.3.2-1.6.6-2.7 1.5-2.7s1.3 1.1 1.5 2.7c.3 2.7.5 6.3 2.3 6.3 1.6 0 2.1-2.1 2.6-4.3C23.4 19.8 25 17 25 13c0-5.5-4-9-9-9Z" fill="#1B2A41"/>
+      </svg>
+      Chandan Dental Clinic
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#hours">Hours &amp; Location</a></li>
+      <li><a href="#appointment" class="nav-cta">Book a Visit</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">General &amp; Family Dentistry</span>
+        <h1>Dental care that puts<br>you at ease.</h1>
+        <p class="lede">Chandan Dental Clinic offers gentle, modern dentistry for every member of the family — from routine cleanings to same-week appointments, in a space designed to feel calm, not clinical.</p>
+        <div class="hero-ctas">
+          <a href="#appointment" class="btn btn-primary">Request an Appointment</a>
+          <a href="tel:8299199957" class="btn btn-ghost">Call the Clinic</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <span class="num">4.9★</span>
+            <span class="label">Patient rating</span>
+          </div>
+          <div class="trust-item">
+            <span class="num">12+ yrs</span>
+            <span class="label">Serving the neighborhood</span>
+          </div>
+          <div class="trust-item">
+            <span class="num">Same-week</span>
+            <span class="label">Appointments available</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg class="arch-bg" viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M40 380 C40 180, 120 40, 200 40 C280 40, 360 180, 360 380" stroke="#E8917A" stroke-width="2" fill="none" opacity="0.5"/>
+          <path d="M70 390 C70 210, 135 90, 200 90 C265 90, 330 210, 330 390" stroke="#1B2A41" stroke-width="1.5" fill="none" opacity="0.25"/>
+        </svg>
+        <div class="hero-photo-frame">
+          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=900&auto=format&fit=crop" alt="Bright, modern dental treatment room with a dental chair by a sunny window">
+        </div>
+      </div>
+    </div>
+
+    <svg class="smile-divider" viewBox="0 0 1140 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0 10 C 285 60, 855 60, 1140 10" stroke="#D4CFC4" stroke-width="1.5" fill="none"/>
+    </svg>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop" alt="Dentist explaining a treatment plan to a smiling patient">
+      </div>
+      <div>
+        <span class="eyebrow">Why Brightline</span>
+        <h2>One team. One specialty. Real attention.</h2>
+        <p style="color:#3a4a5e; font-size:1.05rem;">We focus on general and family dentistry only — which means no juggling unrelated specialties, no rushed ten-minute slots. Just thorough, unhurried care from a team that gets to know your smile over time.</p>
+        <ul class="feature-list">
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Unhurried appointments</strong>
+              <span class="desc">We schedule enough time for questions, not just procedures.</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Transparent pricing</strong>
+              <span class="desc">You'll know the cost of treatment before we begin, every time.</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Family-friendly scheduling</strong>
+              <span class="desc">Book overlapping slots for siblings or partners in one visit.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="bg-navy">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What We Treat</span>
+        <h2>Everything your family's smile needs</h2>
+        <p>Routine, restorative, and preventive care — all under one roof, all from dentists who know your history.</p>
+      </div>
+      <div class="service-list">
+
+        <div class="service-pill">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 9c0-4 3-6 7-6s7 2 7 6c0 2-1 3.5-1.5 6-.4 2-.8 5-2.3 5-1.6 0-1.7-3-2-4.7-.2-1-.5-1.8-1.2-1.8s-1 .8-1.2 1.8c-.3 1.7-.4 4.7-2 4.7-1.5 0-1.9-3-2.3-5C6 12.5 5 11 5 9Z"/></svg>
+          <h3>Routine Cleanings</h3>
+          <p>Twice-yearly checkups and cleanings to catch issues before they grow.</p>
+        </div>
+
+        <div class="service-pill">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Fillings &amp; Restorations</h3>
+          <p>Tooth-colored fillings and repairs that blend naturally with your smile.</p>
+        </div>
+
+        <div class="service-pill">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 4v5c0 5-3 8-7 9-4-1-7-4-7-9V7l7-4Z"/></svg>
+          <h3>Root Canal Therapy</h3>
+          <p>Pain-focused, gentle treatment for infected or damaged teeth.</p>
+        </div>
+
+        <div class="service-pill">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h.01M15 9h.01M9 15c1 1 5 1 6 0"/></svg>
+          <h3>Pediatric Dentistry</h3>
+          <p>A calm first experience for kids, with care that grows with them.</p>
+        </div>
+
+        <div class="service-pill">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h4l2-7 4 14 2-7h4"/></svg>
+          <h3>Emergency Visits</h3>
+          <p>Same-week slots reserved daily for urgent pain or breakage.</p>
+        </div>
+
+        <div class="service-pill">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 19l4-10 3 6 2-4 5 8"/></svg>
+          <h3>Cosmetic Whitening</h3>
+          <p>In-clinic and take-home whitening options, fitted to your schedule.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS / LOCATION -->
+  <section id="hours">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Visit Us</span>
+        <h2>Hours &amp; Location</h2>
+        <p>Conveniently located, with hours built around the working week.</p>
+      </div>
+
+      <div class="info-strip">
+        <div class="info-cell">
+          <h3><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Hours</h3>
+          <ul>
+            <li><span>Mon – Fri</span><span>9:00 AM – 7:00 PM</span></li>
+            <li><span>Saturday</span><span>9:00 AM – 4:00 PM</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+          </ul>
+        </div>
+        <div class="info-cell">
+          <h3><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.3"/></svg>Address</h3>
+          <p>212,<br>Saket Nagar Main Road,<br>Gandhinagar,<br>Naria,<br>Varanasi,<br>Uttar Pradesh,<br>221005</p>
+        </div>
+        <div class="info-cell">
+          <h3><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2c-8.3 0-15-6.7-15-15a2 2 0 0 1 2-2Z"/></svg>Contact</h3>
+          <p>Phone: <a href="tel:8299199957">8299199957</a><br>
+          Email: <a href="mailto:iamanshuman2434@gmail.com">iamanshuman2434@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT FORM -->
+  <section id="appointment">
+    <div class="wrap">
+      <div class="appointment">
+        <div class="appt-grid">
+          <div class="section-head" style="margin-bottom:0;">
+            <span class="eyebrow">Book a Visit</span>
+            <h2>Request an appointment</h2>
+            <p>Fill in the form and our front desk will call or email you to confirm a time. For dental emergencies, please call the clinic directly instead of using this form.</p>
+          </div>
+
+          <form id="appointmentForm" action="https://formspree.io/f/mzdldajg" method="POST">
+            <div class="form-row">
+              <div>
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div>
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" placeholder="8299199957" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+              </div>
+              <div>
+                <label for="service">Reason for visit</label>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Choose one</option>
+                  <option>Routine cleaning / checkup</option>
+                  <option>Filling or restoration</option>
+                  <option>Root canal</option>
+                  <option>Pediatric visit</option>
+                  <option>Dental emergency</option>
+                  <option>Cosmetic whitening</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="date">Preferred date</label>
+                <input type="date" id="date" name="date">
+              </div>
+              <div>
+                <label for="time">Preferred time</label>
+                <select id="time" name="time">
+                  <option value="" disabled selected>Choose one</option>
+                  <option>Morning (9 AM – 12 PM)</option>
+                  <option>Afternoon (12 PM – 4 PM)</option>
+                  <option>Evening (4 PM – 7 PM)</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="notes">Anything we should know?</label>
+              <textarea id="notes" name="notes" placeholder="Optional — symptoms, past visits, insurance, etc."></textarea>
+            </div>
+
+            <p class="form-note">By submitting, you agree to be contacted by phone or email to confirm your appointment.</p>
+
+            <button type="submit" class="btn-submit">Send Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Chandan Dental Clinic</h4>
+        <p>General &amp; family dentistry, focused on care that doesn't feel rushed.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#appointment">Book a Visit</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:8299199957">8299199957</a></li>
+          <li><a href="mailto:iamanshuman2434@gmail.com">iamanshuman2434@gmail.com</a></li>
+          <li>123 Example Street, Bengaluru</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Chandan Dental Clinic. All rights reserved.</span>
+      <span>Replace placeholder text with your clinic's real details.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
